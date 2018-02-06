@@ -5,14 +5,12 @@
 //  Copyright © 2018 Aleksandr Kozhevnikov. All rights reserved.
 //
 
-import Foundation
-
 open class ASViewController: UIViewController {
     
     var activeField: UITextField? = nil
-    static var scrollView: UIScrollView? = nil
+    open static var scrollView: UIScrollView? = nil
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         registerForKeyboardNotifications()
     }
