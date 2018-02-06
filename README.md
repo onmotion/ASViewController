@@ -1,6 +1,5 @@
 # ASViewController
 
-[![CI Status](http://img.shields.io/travis/onmotion/ASViewController.svg?style=flat)](https://travis-ci.org/onmotion/ASViewController)
 [![Version](https://img.shields.io/cocoapods/v/ASViewController.svg?style=flat)](http://cocoapods.org/pods/ASViewController)
 [![License](https://img.shields.io/cocoapods/l/ASViewController.svg?style=flat)](http://cocoapods.org/pods/ASViewController)
 [![Platform](https://img.shields.io/cocoapods/p/ASViewController.svg?style=flat)](http://cocoapods.org/pods/ASViewController)
