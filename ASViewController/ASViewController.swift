@@ -10,6 +10,7 @@ open class ASViewController: UIViewController {
     
     var activeField: UITextField? = nil
     open static var scrollView: UIScrollView? = nil
+    open static var offset = 20
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ open class ASViewController: UIViewController {
         let userInfo = notification.userInfo
         let kbFrameSize = (userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.size
         
-        let contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbFrameSize.height, 0.0)
+        let contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbFrameSize.height + CGFloat(ASViewController.offset), 0.0)
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
         

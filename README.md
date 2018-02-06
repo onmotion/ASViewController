@@ -31,6 +31,13 @@ pod 'ASViewController'
 
 ![2](https://github.com/onmotion/ASViewController/blob/captions/Screenshots/2.png)
 
+## Settings
+
+Also you can set up offset to text field (default = 20)
+
+```
+ASViewController.offset = 10
+```
 
 ## Author
 
