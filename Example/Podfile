@@ -1,0 +1,6 @@
+use_frameworks!
+target 'ASViewController_Tests' do
+  pod 'ASViewController', :path => '../'
+  
+  
+end
