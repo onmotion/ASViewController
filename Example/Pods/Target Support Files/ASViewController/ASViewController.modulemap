@@ -1,0 +1,6 @@
+framework module ASViewController {
+  umbrella header "ASViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

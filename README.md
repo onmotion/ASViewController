@@ -22,7 +22,7 @@ pod 'ASViewController'
 
 ## Author
 
-Alexandr Kozhevnikov, kozhevnikov@skl-co.ru
+Alexandr Kozhevnikov, onmotion1@gmail.com
 
 ## License
 
