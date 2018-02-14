@@ -21,7 +21,7 @@ pod 'ASViewController'
 
 * Inherit your **ViewController** from **ASViewController** instead **UIASViewController**
 
-* then wrap your view contains text fields into **UIScrollView**, add ```@IBOutlet``` and bind it to ASViewController.scrollView as so:
+* then wrap your view contains text fields into **UIScrollView**, add ```@IBOutlet``` and bind it to scrollableArea as so:
 
 ![sample2](https://github.com/onmotion/ASViewController/blob/captions/Screenshots/1.gif)
 
@@ -38,6 +38,10 @@ Also you can set up offset to text field (default = 20)
 ```
 ASViewController.offset = 10
 ```
+```
+ASViewController.dismissKeyboardWhenTapAnywhere = true // (default = false) keyboard will be hidden when tapped anywhere outside textfield
+```
+
 
 ## Author
 
