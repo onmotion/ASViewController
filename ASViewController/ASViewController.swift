@@ -41,7 +41,7 @@ open class ASViewController: UIViewController {
     
     
     func registerForKeyboardNotifications(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: .UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(textViewDidBeginEditingNotification), name: .UITextViewTextDidBeginEditing, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidBeginEditingNotification), name: .UITextFieldTextDidBeginEditing, object: nil)
@@ -50,7 +50,7 @@ open class ASViewController: UIViewController {
     }
     
     func removeForKeyboardNotifications(){
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UITextViewTextDidBeginEditing, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UITextFieldTextDidBeginEditing, object: nil)
@@ -58,7 +58,7 @@ open class ASViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: .UITextFieldTextDidEndEditing, object: nil)
     }
     
-    @objc func keyboardDidShow(notification: Notification) {
+    @objc func keyboardWillShow(notification: Notification) {
         
         let userInfo = notification.userInfo
         kbFrameSize = (userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.size
@@ -70,7 +70,7 @@ open class ASViewController: UIViewController {
     }
     
     func adjustView() {
-        print("adjust")
+
         guard let scrollView = scrollableArea else{
             return
         }
@@ -90,9 +90,15 @@ open class ASViewController: UIViewController {
                 scrollView.scrollRectToVisible(activeField!.frame, animated: true)
             }
         } else {
-            let contentInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
-            scrollView.contentInset = contentInsets
-            scrollView.scrollIndicatorInsets = contentInsets
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 0.2, animations: {
+                    let contentInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
+                    scrollView.contentInset = contentInsets
+                    scrollView.scrollIndicatorInsets = contentInsets
+                })
+            }
+            
+            
         }
     }
     
