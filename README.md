@@ -9,6 +9,11 @@
 ![sample](https://github.com/onmotion/ASViewController/blob/captions/Screenshots/2.gif)
 
 
+## Requirements
+
+iOS 8.0+
+Swift 4.0
+
 ## Installation
 
 ASViewController is available through [CocoaPods](http://cocoapods.org). To install

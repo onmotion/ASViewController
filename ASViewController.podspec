@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ASViewController'
-  s.version          = '0.2.1'
+  s.version          = '0.2.2'
   s.summary          = 'ViewController with auto scroll to active textField when keyboard is showing'
   
   s.description      = <<-DESC

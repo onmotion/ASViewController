@@ -39,7 +39,6 @@ open class ASViewController: UIViewController {
         }
     }
     
-    
     func registerForKeyboardNotifications(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
@@ -79,7 +78,7 @@ open class ASViewController: UIViewController {
             let contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbFrameSize.height + CGFloat(ASViewController.offset), 0.0)
             scrollView.contentInset = contentInsets
             scrollView.scrollIndicatorInsets = contentInsets
-            
+
             guard activeField != nil else {
                 return
             }
@@ -95,10 +94,10 @@ open class ASViewController: UIViewController {
                     let contentInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
                     scrollView.contentInset = contentInsets
                     scrollView.scrollIndicatorInsets = contentInsets
+                    
                 })
             }
-            
-            
+
         }
     }
     
