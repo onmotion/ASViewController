@@ -69,16 +69,17 @@ open class ASViewController: UIViewController {
     }
     
     func adjustView() {
-
+        
         guard let scrollView = scrollableArea else{
             return
         }
         
         if let kbFrameSize = kbFrameSize {
-            let contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbFrameSize.height + CGFloat(ASViewController.offset), 0.0)
+            let currentContentInsets = scrollView.contentInset
+            let contentInsets = UIEdgeInsetsMake(currentContentInsets.top, currentContentInsets.left, kbFrameSize.height + CGFloat(ASViewController.offset), currentContentInsets.right)
             scrollView.contentInset = contentInsets
             scrollView.scrollIndicatorInsets = contentInsets
-
+            
             guard activeField != nil else {
                 return
             }
@@ -91,13 +92,14 @@ open class ASViewController: UIViewController {
         } else {
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 0.2, animations: {
-                    let contentInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
+                    let currentContentInsets = scrollView.contentInset
+                    let contentInsets = UIEdgeInsetsMake(currentContentInsets.top, currentContentInsets.left, 0.0, currentContentInsets.right)
                     scrollView.contentInset = contentInsets
                     scrollView.scrollIndicatorInsets = contentInsets
                     
                 })
             }
-
+            
         }
     }
     
@@ -123,3 +125,4 @@ open class ASViewController: UIViewController {
     }
     
 }
+
